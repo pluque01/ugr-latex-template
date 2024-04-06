@@ -1,0 +1,53 @@
+% Useful packages, sorted so packages of similar functionality are grouped together. Not all are essential to make the document work, however an effort was made to make this list as minimalistic as possible. Feel free to add your own!
+
+% Essential for making this template work are graphicx, float, tabularx, tabu, tocbibind, titlesec, fancyhdr, xcolor and tikz. 
+
+% Not essential, but you will have to debug the document a little bit when removing them are amsmath, amsthm, amssymb, amsfonts, caption, subcaption, appendix, enumitem, hyperref and cleveref.
+
+% inputenc, lipsum, booktabs, geometry and microtype are not required, but nice to have.
+
+\usepackage[utf8]{inputenc} % Allows the use of some special characters
+\usepackage{amsmath, amsthm, amssymb, amsfonts} % Nicer mathematical typesetting
+\usepackage{lipsum} % Creates dummy text lorem ipsum to showcase typsetting 
+
+
+\usepackage{graphicx} % Allows the use of \begin{figure} and \includegraphics
+\usepackage{float} % Useful for specifying the location of a figure ([H] for ex.)
+\usepackage{caption} % Adds additional customization for (figure) captions
+\usepackage{subcaption} % Needed to create sub-figures
+
+\usepackage{tabularx} % Adds additional customization for tables
+\usepackage{tabu} % Adds additional customization for tables
+\usepackage{booktabs} % For generally nicer looking tables
+
+\usepackage[nottoc,numbib]{tocbibind} % Automatically adds bibliography to ToC
+\usepackage[margin = 2.5cm]{geometry} % Allows for custom (wider) margins
+\usepackage{microtype} % Slightly loosens margin restrictions for nicer spacing  
+\usepackage{titlesec} % Used to create custom section and subsection titles
+\usepackage{titletoc} % Used to create a custom ToC
+\usepackage{appendix} % Any chapter after \appendix is given a letter as index
+\usepackage{fancyhdr} % Adds customization for headers and footers
+\usepackage[shortlabels]{enumitem} % Adds additional customization for itemize. 
+
+\usepackage{hyperref} % Allows links and makes references and the ToC clickable
+\usepackage[noabbrev, capitalise]{cleveref} % Easier referencing using \cref{<label>} instead of \ref{}
+
+\usepackage{xcolor} % Predefines additional colors and allows user defined colors
+
+\usepackage{tikz} % Useful for drawing images, used for creating the frontpage
+\usetikzlibrary{positioning} % Additional library for relative positioning 
+\usetikzlibrary{calc} % Additional library for calculating within tikz
+
+% Defines a command used by tikz to calculate some coordinates for the front-page
+\makeatletter
+\newcommand{\gettikzxy}[3]{%
+	\tikz@scan@one@point\pgfutil@firstofone#1\relax
+	\edef#2{\the\pgf@x}%
+	\edef#3{\the\pgf@y}%
+}
+\makeatother
+
+\usepackage[spanish, english]{babel}
+
+
+

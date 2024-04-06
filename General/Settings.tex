@@ -1,0 +1,88 @@
+% Give your report a title
+\newcommand\reporttitle{Un título interesante}
+
+% Insert course code, name, quartile number and year (or any other subtitle)
+\newcommand\reportsubtitle{
+	Un subtítulo interesante
+}
+
+% Add your group number (for DBL) or any other text.
+\newcommand\groupnumber{
+	% \textbf{Group xx}
+}
+
+% Insert authors and student numbers here
+\newcommand\reportauthors{
+	Nombre Apellido
+}
+
+% Add the name of your tutor (for DBL) or any other text.
+\newcommand\grouptutor{
+	% Tutor: Name Surname
+}
+
+% Date and location (default: current date and Eindhoven)
+\newcommand\placeanddate{
+	Granada, {\selectlanguage{spanish}\today}
+}
+
+% Define Ugr-red (color of the TU/e logo). Can be changed to drastically change the look of the template
+\definecolor{Ugr-red}{RGB}{233, 44, 48}
+
+% All of the following code can be removed to be left with (close to) default LaTeX behaviour. 
+
+% Sets up hyperlinks in the document to be colored
+\hypersetup{
+	colorlinks=true,
+	linkcolor=Ugr-red,
+	urlcolor=Ugr-red,
+	citecolor = Ugr-red
+}
+\urlstyle{same} % Defines settings for link and reference formatting
+
+
+% Change bullet style for level 1, 2 and 3 respectively for itemize
+\renewcommand{\labelitemi}{\scriptsize\textcolor{Ugr-red}{$\blacksquare$}}% level 1
+\renewcommand{\labelitemii}{\scriptsize\textcolor{Ugr-red}{$\square$}}% level 2
+\renewcommand{\labelitemiii}{\textcolor{Ugr-red}{$\circ$}}% level 3
+
+% \renewcommand{\labelitemi}{\small\textcolor{Ugr-red}{\ding{70}}} % level 1
+% \renewcommand{\labelitemii}{\small\textcolor{Ugr-red}{\ding{71}}}% level 2
+% \renewcommand{\labelitemiii}{\tiny\textcolor{Ugr-red}{\ding{71}}}% level 3
+
+% Change bullet style for level 1, 2 and 3 respectively for enumerate
+\renewcommand{\labelenumi}{\textbf{\textcolor{Ugr-red}{\arabic*.}}}% level 1
+\renewcommand{\labelenumii}{\textbf{\textcolor{Ugr-red}{[\alph*]}}}% level 2
+\renewcommand{\labelenumiii}{\textbf{\textcolor{Ugr-red}{\roman*.}}}% level 3
+
+% Have reference labels be linked to section (section 3 will have fig. 3.1 etc.)
+\counterwithin{equation}{section} % For equations
+\counterwithin{figure}{section} % For figures
+\counterwithin{table}{section} % For tables
+
+% Creates a beautiful header/footer
+\pagestyle{fancy}
+\lhead{\includegraphics[height = 16pt]{Figures/0. General/UGR-MARCA-02-color.pdf}}
+\rhead{\reporttitle}
+\renewcommand{\footrulewidth}{0.4pt}
+\cfoot{Page \thepage}
+
+% Formats section, subsection and subsubsection titles respectively 
+\titleformat{\section}{\sffamily\color{Ugr-red}\Large\bfseries}{\thesection\enskip\color{gray}\textbar\enskip}{0cm}{} % Formats section titles
+
+\titleformat{\subsection}{\sffamily\color{Ugr-red}\large\bfseries}{\thesubsection\enskip\color{gray}\textbar\enskip}{0cm}{} % Formats subsection titles
+
+\titleformat{\subsubsection}{\sffamily\color{Ugr-red}\bfseries}{\thesubsubsection\enskip\color{gray}\textbar\enskip}{0cm}{} % Formats subsubsection titles
+
+% Formats captions
+\DeclareCaptionFont{Ugr-red}{\color{Ugr-red}}
+\captionsetup{labelfont={Ugr-red,bf}}
+
+% Changes font to mlmodern
+\usepackage{mlmodern}
+
+% Removes indent when starting a new paragraph
+\setlength\parindent{0pt}
+
+% Limits the ToC to sections and subsections (no subsubsec.)
+\setcounter{tocdepth}{2}

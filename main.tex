@@ -1,0 +1,42 @@
+\documentclass[a4paper, table]{article}
+\input{General/Preamble} % Loads in the preamble 
+\input{General/Settings} % Loads in user defined settings
+\begin{document}
+
+% Inserts the front page
+\input{Chapters/0. Frontpage}
+\newpage
+
+% Generates a ToC without page number
+{\hypersetup{linkcolor=black} % Keeps the ToC black even with non-black linkcolor
+{\selectlanguage{spanish}\tableofcontents\thispagestyle{empty}}}
+\newpage
+
+% contains inspiration for formatting tables, images, text citations etc.
+\input{Chapters/Z. Template} % Feel free to remove / comment out
+\newpage
+
+% Generates a list of symbols table
+\input{Chapters/0. List of symbols}
+\newpage
+
+% Creates the introduction, starting page numbering
+\input{Chapters/1. Introduction} \pagenumbering{arabic}
+\newpage
+
+% Copy this to add more chapters
+\input{Chapters/2. Copy me}
+\newpage
+
+% Creates references using the Biblatex 
+\bibliographystyle{plain}
+\bibliography{General/References.bib}
+\newpage
+
+\appendix % Any section after this command will have a letter as an index
+
+% Adds an appendix entry
+\input{Chapters/A. Appendix A}
+\newpage
+
+\end{document}

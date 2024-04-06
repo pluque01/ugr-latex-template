@@ -1,0 +1,129 @@
+\section{This is a section} \pagenumbering{roman}
+\subsection{This is a subsection}
+
+\subsubsection{This is a subsubsection}
+This section contains some templates that can be used to create a uniform style within the document. It also shows of the overall formatting of the template, created using the predefined styles from the \texttt{settings.tex} file.
+
+\subsection{General formatting}
+Firstly, the document uses the font mlmodern, using no indent for new paragraphs and commonly uses the color \textcolor{Ugr-red}{Ugr-red} (the color of the TU/e logo) in its formatting. It uses the \texttt{fancyhdr} package for its headers and footers, using the TU/e logo and report title as the header and the page number as the footer. The template uses custom section, subsection and subsubsection formatting making use of the \texttt{titlesec} package.\\
+The \texttt{hyperref} package is responsible for highlighting and formatting references like figures and tables. For example \cref{table: style 1} or \cref{fig: three images}. It also works for citations \cite{texbook}. Note how figure numbers are numbered according to the format \texttt{<chapter number>.<figure number>}.\\
+
+Bullet lists are also changed globally, for a maximum of 3 levels:
+
+\begin{itemize}
+	\item Item 1
+	\item Item 2
+	      \begin{itemize}
+		      \item subitem 1
+		            \begin{itemize}
+			            \item subsubitem 1
+			            \item subsubitem 2
+		            \end{itemize}
+	      \end{itemize}
+	\item Item 3
+\end{itemize}
+
+Similarly numbered lists are also changed document wide:
+
+\begin{enumerate}
+	\item Item 1
+	\item Item 2
+	      \begin{enumerate}
+		      \item subitem 1
+		            \begin{enumerate}
+			            \item subsubitem 1
+			            \item subsubitem 2
+		            \end{enumerate}
+	      \end{enumerate}
+	\item Item 3
+\end{enumerate}
+
+\newpage
+
+\subsection{Tables and figures}
+The following table, \cref{table: style 1}, shows a possible format for tables in this document. Alternatively, one can also use the black and white version of this, shown in \cref{table: style 2}. Note that caption labels are in the format \textbf{\textcolor{Ugr-red}{Table x.y:} }
+\begin{table}[ht]
+	\rowcolors{2}{Ugr-red!10}{white}
+	\centering
+	\caption{A table without vertical lines.}
+	\begin{tabular}[t]{ccccc}
+		\toprule
+		\color{Ugr-red}\textbf{Column 1} & \color{Ugr-red}\textbf{Column 2} & \color{Ugr-red}\textbf{Column 3} & \color{Ugr-red}\textbf{Column 4} & \color{Ugr-red}\textbf{Column 5} \\
+		\midrule
+		Entry 1                          & 1                                & 2                                & 3                                & 4                                \\
+		Entry 2                          & 1                                & 2                                & 3                                & 4                                \\
+		Entry 3                          & 1                                & 2                                & 3                                & 4                                \\
+		Entry 4                          & 1                                & 2                                & 3                                & 4                                \\
+		\bottomrule
+	\end{tabular}
+	\label{table: style 1}
+\end{table}
+
+\begin{table}[ht]
+	\rowcolors{2}{gray!10}{white}
+	\centering
+	\caption{A table without vertical lines.}
+	\begin{tabular}[t]{ccccc}
+		\toprule
+		\textbf{Column 1} & \textbf{Column 2} & \textbf{Column 3} & \textbf{Column 4} & \textbf{Column 5} \\
+		\midrule
+		Entry 1           & 1                 & 2                 & 3                 & 4                 \\
+		Entry 2           & 1                 & 2                 & 3                 & 4                 \\
+		Entry 3           & 1                 & 2                 & 3                 & 4                 \\
+		Entry 4           & 1                 & 2                 & 3                 & 4                 \\
+		\bottomrule
+	\end{tabular}
+	\label{table: style 2}
+\end{table}
+
+For normal, single image figures, the standard \texttt{\textbackslash begin\{figure\}} environment can be used. For multi-image figures, one could use either the \texttt{\textbackslash begin\{subfigure\}} environment to get a main caption with 3 subcaptions like \cref{fig: three images} or the \texttt{\textbackslash begin\{minipage\}} environment to get 3 independent captions like \cref{fig: style 2 image a} - \ref{fig: style 2 image c}
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{example-image-a}
+		\caption{image a}
+		\label{fig: style 1 image a}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{example-image-b}
+		\caption{image b}
+		\label{fig: style 1 image b}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{example-image-c}
+		\caption{image c}
+		\label{fig: style 1 image c}
+	\end{subfigure}
+	\caption{Three images}
+	\label{fig: three images}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{example-image-a}
+		\captionof{figure}{image a}
+		\label{fig: style 2 image a}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{example-image-b}
+		\captionof{figure}{image b}
+		\label{fig: style 2 image b}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{example-image-c}
+		\captionof{figure}{image c}
+		\label{fig: style 2 image c}
+	\end{minipage}
+\end{figure}
