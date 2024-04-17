@@ -86,3 +86,8 @@
 
 % Limits the ToC to sections and subsections (no subsubsec.)
 \setcounter{tocdepth}{2}
+
+% Modify the texttt command to highlight the background
+\definecolor{inline-code-bg}{RGB}{252, 236, 236}
+\let\OldTexttt\texttt
+\renewcommand{\texttt}[1]{\fcolorbox{inline-code-bg}{inline-code-bg}{\small\!\OldTexttt{#1}\!}}
