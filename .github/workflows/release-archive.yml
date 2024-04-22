@@ -33,4 +33,4 @@ jobs:
           tag: ${{ github.ref_name }}
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release upload "$tag" ${{ github.event.release.tag_name }}
+          gh release upload "$tag" ${{github.event.release.tag_name}}.zip
