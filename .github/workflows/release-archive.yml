@@ -23,14 +23,7 @@ jobs:
           tag: ${{ github.ref_name }}
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "$tag" \
+          gh release create "$tag" "${{github.event.release.tag_name}}.zip#ugr-latex-template-${{github.event.release.tag_name}}" \
               --repo="$GITHUB_REPOSITORY" \
               --title="${GITHUB_REPOSITORY#*/} ${tag#v}" \
               --generate-notes
-
-      - name: Upload archive
-        env:
-          tag: ${{ github.ref_name }}
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh release upload "$tag" ${{github.event.release.tag_name}}.zip
