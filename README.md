@@ -4,6 +4,8 @@ Esta plantilla **no oficial** ha sido modificada a partir de
 [Report Template V1.0 - Eindhoven University of Technology (TU/e)](https://www.overleaf.com/latex/templates/report-template-v1-dot-0/xvtpxwgvmwyr)
 para trabajos académicos en la Universidad de Granada.
 
+Tanto esta plantilla como la original están bajo la licencia [Creative Commons CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+
 Se puede ver un ejemplo de la plantilla en el fichero
 [`main.pdf`](main.pdf).
 
